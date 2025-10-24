@@ -95,7 +95,7 @@ if "logged_in" not in st.session_state:
 def do_logout():
     st.session_state.logged_in = False
     st.session_state.user = None
-    st.experimental_rerun()
+    st.rerun()
 
 def show_login():
     # Centered login card
@@ -118,7 +118,7 @@ def show_login():
                 st.session_state.logged_in = True
                 st.session_state.user = username
                 st.success(f"Welcome back, {username}!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Invalid credentials. If this is a demo, try 'admin/admin123' or 'client/client123'.")
 
@@ -369,3 +369,4 @@ elif page == "Raw Data":
 # -------------------------
 st.markdown("---")
 st.markdown("© Project: Hospital Admissions & Bed Occupancy — Generated with Streamlit. Place CSV in the same folder as app.py.")
+
