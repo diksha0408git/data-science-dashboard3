@@ -128,7 +128,7 @@ def show_login():
         # 🖼️ Banner image — wide and stretched
         st.markdown(
             """
-            <img src="hospital_banner.png" class="banner-img">
+            <img src="hospital.jpg" class="banner-img">
             """,
             unsafe_allow_html=True
         )
@@ -397,6 +397,7 @@ elif page == "Raw Data":
 # -------------------------
 st.markdown("---")
 st.markdown("© Project: Hospital Admissions & Bed Occupancy — Generated with Streamlit. Place CSV in the same folder as app.py.")
+
 
 
 
