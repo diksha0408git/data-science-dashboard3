@@ -98,23 +98,44 @@ def do_logout():
     st.rerun()
 
 def show_login():
-    # Centered login card
     left, mid, right = st.columns([1, 2, 1])
     with mid:
-        st.markdown("<div class='login-card'>", unsafe_allow_html=True)
-        st.image(
-            "hospital.jpg",width=72
+        # Use a container for full control
+        st.markdown(
+            """
+            <style>
+                .login-card {
+                    background-color: white;
+                    padding: 25px;
+                    border-radius: 15px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                }
+                .banner-img {
+                    width: 100%;
+                    height: 160px;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    margin-bottom: 15px;
+                }
+            </style>
+            """,
+            unsafe_allow_html=True
         )
-        st.markdown("""
-           <div style='text-align:center;">
-               <img src='hospital.jpg"
-                    style="width:100%;
-        height:auto; border-radius:10px;
-        margin-bottom:15px; object-fit:cover;">
-        </div>
-        """, unsafe_allow_html=True)
-        st.markdown("<h2 style='margin-bottom:2px;text-align:center;'>Hospital Dashoard Login</h2>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align:center;'>Sign in to access hospital analytics and forecasts</p>", unsafe_allow_html=True)
+
+        st.markdown("<div class='login-card'>", unsafe_allow_html=True)
+
+        # 🖼️ Banner image — wide and stretched
+        st.markdown(
+            """
+            <img src="hospital_banner.png" class="banner-img">
+            """,
+            unsafe_allow_html=True
+        )
+
+        # Login text
+        st.markdown("<h2>Hospital Dashboard Login</h2>", unsafe_allow_html=True)
+        st.markdown("<p>Sign in to access hospital analytics and forecasts</p>", unsafe_allow_html=True)
 
         username = st.text_input("Username", key="login_user")
         password = st.text_input("Password", type="password", key="login_pass")
@@ -376,6 +397,7 @@ elif page == "Raw Data":
 # -------------------------
 st.markdown("---")
 st.markdown("© Project: Hospital Admissions & Bed Occupancy — Generated with Streamlit. Place CSV in the same folder as app.py.")
+
 
 
 
