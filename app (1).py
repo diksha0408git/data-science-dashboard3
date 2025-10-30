@@ -105,8 +105,8 @@ def show_login():
         st.image(
             "hospital.jpg",width=72
         )
-        st.markdown("<h2 style='margin-bottom:2px'>Hospital Dashboard Login</h2>", unsafe_allow_html=True)
-        st.markdown("<p style='color:#6b7280;margin-top:0'>Sign in to access hospital analytics and forecasts</p>", unsafe_allow_html=True)
+        st.markdown("<h2 style='margin-bottom:2px;text-align:center;'>Hospital Dashoard Login</h2>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align:center;'>Sign in to access hospital analytics and forecasts</p>", unsafe_allow_html=True)
 
         username = st.text_input("Username", key="login_user")
         password = st.text_input("Password", type="password", key="login_pass")
@@ -368,6 +368,7 @@ elif page == "Raw Data":
 # -------------------------
 st.markdown("---")
 st.markdown("© Project: Hospital Admissions & Bed Occupancy — Generated with Streamlit. Place CSV in the same folder as app.py.")
+
 
 
 
