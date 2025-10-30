@@ -101,38 +101,41 @@ def show_login():
     left, mid, right = st.columns([1, 2, 1])
     with mid:
         # Use a container for full control
-        st.markdown(
-            """
-            <style>
-                .login-card {
-                    background-color: white;
-                    padding: 25px;
-                    border-radius: 15px;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    text-align: center;
-                }
-                .banner-img {
-                    width: 100%;
-                    height: 160px;
-                    object-fit: cover;
-                    border-radius: 12px;
-                    margin-bottom: 15px;
-                }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
+        import streamlit as st
 
-        st.markdown("<div class='login-card'>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    .login-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        width: 500px;
+        margin: 0 auto;
+    }
+    .banner_img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-        # 🖼️ Banner image — wide and stretched
-        st.markdown(
-            """
-            <img src="hospital.jpg" class="banner-img">
-            """,
-            unsafe_allow_html=True
-        )
-
+st.markdown(
+    """
+    <div class="login-card">
+        <img src="hospital.jpg" class="banner_img">
+        <h2 style="text-align:center; color:#2E86C1;">🏥 Hospital Dashboard Login</h2>
+        <p style="text-align:center; color:gray;">Sign in to access hospital analytics and records</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
         # Login text
         st.markdown("<h2>Hospital Dashboard Login</h2>", unsafe_allow_html=True)
         st.markdown("<p>Sign in to access hospital analytics and forecasts</p>", unsafe_allow_html=True)
@@ -397,6 +400,7 @@ elif page == "Raw Data":
 # -------------------------
 st.markdown("---")
 st.markdown("© Project: Hospital Admissions & Bed Occupancy — Generated with Streamlit. Place CSV in the same folder as app.py.")
+
 
 
 
