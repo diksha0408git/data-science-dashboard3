@@ -111,13 +111,6 @@ def show_login():
                 width: 500px;
                 margin: 0 auto;
             }
-            .banner_img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 10px;
-                margin-bottom: 20px;
-            }
             </style>
             """,
             unsafe_allow_html=True
@@ -126,7 +119,6 @@ def show_login():
         st.markdown(
             """
             <div class="login-card">
-                <img src="hospital.jpg" class="banner_img">
                 <h2 style="text-align:center; color:#2E86C1;">🏥 Hospital Dashboard Login</h2>
                 <p style="text-align:center; color:gray;">Sign in to access hospital analytics and records</p>
             </div>
@@ -398,6 +390,7 @@ elif page == "Raw Data":
 # -------------------------
 st.markdown("---")
 st.markdown("© Project: Hospital Admissions & Bed Occupancy — Generated with Streamlit. Place CSV in the same folder as app.py.")
+
 
 
 
